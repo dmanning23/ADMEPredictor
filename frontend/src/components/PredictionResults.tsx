@@ -1,4 +1,4 @@
-import { PredictionResponse } from '../services/api'
+import { type PredictionResponse } from '../services/api'
 import { PropertyCard } from './PropertyCard'
 import { formatValue, formatPct, riskColour, solubilityColour } from '../utils/formatting'
 

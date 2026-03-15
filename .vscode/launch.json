@@ -1,0 +1,71 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "FastAPI Backend",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": ["main:app", "--reload", "--port", "8000"],
+      "cwd": "${workspaceFolder}/backend",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/backend"
+      },
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "jinja": true,
+      "justMyCode": true
+    },
+    {
+      "name": "Evaluate Models",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/backend/evaluate.py",
+      "args": ["--data", "${workspaceFolder}/data/adme_merged.csv"],
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/backend"
+      },
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "justMyCode": true
+    },
+    {
+      "name": "Train GNN",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/backend/train.py",
+      "args": [
+        "--data", "${workspaceFolder}/data/adme_merged.csv",
+        "--model", "gnn",
+        "--epochs", "60",
+        "--batch_size", "64"
+      ],
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/backend"
+      },
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "justMyCode": true
+    },
+    {
+      "name": "MCP Server",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/mcp_server/server.py",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/backend",
+        "ADME_API_URL": "http://localhost:8000"
+      },
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "justMyCode": true
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Full Stack",
+      "configurations": ["FastAPI Backend"],
+      "preLaunchTask": "Start Frontend",
+      "stopAll": true
+    }
+  ]
+}

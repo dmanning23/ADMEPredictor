@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { predict, PredictionResponse } from '../services/api'
+import { predict, type PredictionResponse } from '../services/api'
 
 interface PredictionState {
   data: PredictionResponse | null

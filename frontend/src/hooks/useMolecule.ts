@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { validateSmiles, ValidationResponse } from '../services/api'
+import { validateSmiles, type ValidationResponse } from '../services/api'
 import { quickValidate } from '../services/validation'
 
 export function useMolecule() {
