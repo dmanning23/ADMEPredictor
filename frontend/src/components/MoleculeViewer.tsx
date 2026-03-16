@@ -30,7 +30,7 @@ export function MoleculeViewer({ smiles, canonicalSmiles }: Props) {
         }
         let svg: string
         try {
-          svg = mol.get_svg()
+          svg = mol.get_svg(288, 192)
         } finally {
           mol.delete()
         }
