@@ -4,9 +4,11 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
-[![React](https://img.shields.io/badge/react-18.0+-61DAFB.svg)](https://reactjs.org/)
+[![React](https://img.shields.io/badge/react-19.0+-61DAFB.svg)](https://reactjs.org/)
 
-[**Live Demo**](https://adme-predictor.vercel.app) · [**API Docs**](https://api.adme-predictor.com/docs) · [**Blog Post**](#)
+[**Live Demo**](#) · [**API Docs**](#) · [**Blog Post**](#)
+
+> 🚧 **Deployment in progress.** Links will be active once Railway + Vercel deploy is complete.
 
 ---
 
@@ -71,6 +73,8 @@ curl -X POST https://api.adme-predictor.com/predict \
 
 ### MCP Server (for LLM clients)
 
+> 🚧 PyPI package not yet published — MCP server is built and working locally.
+
 Use ADME predictions directly inside Claude, Cursor, or any MCP-compatible assistant:
 
 ```bash
@@ -128,8 +132,8 @@ SMILES → Molecular Graph → GCNConv × 3 → Global Mean Pool → MLP Heads
 
 | Layer | Technology |
 |---|---|
-| Backend | FastAPI · PyTorch · PyTorch Geometric · RDKit |
-| Frontend | React 18 · TypeScript · Tailwind CSS v4 · Vite |
+| Backend | FastAPI · PyTorch · PyTorch Geometric · RDKit · Python 3.11 |
+| Frontend | React 19 · TypeScript · Tailwind CSS v4 · Vite · RDKit.js |
 | MCP Server | Model Context Protocol SDK (stdio + HTTP/SSE) |
 | Infrastructure | Railway (backend) · Vercel (frontend) |
 
