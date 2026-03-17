@@ -9,7 +9,7 @@ venv/
 .env
 
 # Checkpoints & data (too large for git)
-checkpoints/
+checkpoints/rf/
 data/
 
 # Local Claude project memory
